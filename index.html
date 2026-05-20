@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Selección Argentina NFC</title>
+<title>Argentina NFC</title>
 
 <style>
 
@@ -35,6 +36,7 @@ body{
 ========================= */
 
 .card-fc{
+
     position:relative;
 
     width:90%;
@@ -56,6 +58,7 @@ body{
 ========================= */
 
 .card-bg{
+
     position:absolute;
     width:100%;
     height:100%;
@@ -82,6 +85,7 @@ body{
 /* EFECTO BANDERA */
 
 .card-bg::before{
+
     content:"";
 
     position:absolute;
@@ -101,9 +105,11 @@ body{
 /* BRILLO PREMIUM */
 
 .card-bg::after{
+
     content:"";
 
     position:absolute;
+
     top:-50%;
     left:-50%;
 
@@ -124,6 +130,7 @@ body{
 }
 
 @keyframes shine{
+
     0%{
         transform:translateX(-100%) rotate(15deg);
     }
@@ -138,6 +145,7 @@ body{
 ========================= */
 
 .card-player{
+
     position:absolute;
 
     bottom:70px;
@@ -161,6 +169,7 @@ body{
 ========================= */
 
 .card-info{
+
     position:absolute;
 
     bottom:0;
@@ -179,12 +188,14 @@ body{
 }
 
 .card-name{
-    font-size:24px;
+
+    font-size:26px;
     font-weight:bold;
     letter-spacing:1px;
 }
 
 .card-details{
+
     display:flex;
     justify-content:center;
     gap:15px;
@@ -194,6 +205,7 @@ body{
 }
 
 .card-details span{
+
     background:rgba(0,0,0,0.55);
 
     padding:5px 12px;
@@ -203,67 +215,8 @@ body{
 }
 
 /* =========================
-   BOTONES
+   PREMIUM BOX
 ========================= */
-
-.btn{
-    display:block;
-
-    margin:10px auto;
-    padding:15px;
-
-    width:90%;
-    max-width:400px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #6CBEF0,
-            #ffffff
-        );
-
-    color:#111;
-    font-weight:bold;
-    text-decoration:none;
-
-    border-radius:14px;
-
-    border:1px solid rgba(255,255,255,0.22);
-
-    box-shadow:
-        0 0 12px rgba(255,255,255,0.08);
-
-    transition:0.3s;
-}
-
-.btn:hover{
-    transform:scale(1.03);
-
-    background:
-        linear-gradient(
-            135deg,
-            #5ab2e8,
-            #dff6ff
-        );
-}
-
-/* =========================
-   PREMIUM MESSI
-========================= */
-
-.messi-title{
-    font-size:28px;
-    font-weight:bold;
-
-    margin-top:15px;
-
-    color:#FFD700;
-
-    text-shadow:
-        0 0 10px rgba(255,215,0,0.55);
-}
-
-/* CONTENEDOR PREMIUM */
 
 .messi-box{
 
@@ -291,7 +244,22 @@ body{
         0 0 45px rgba(108,190,240,0.18);
 }
 
-/* BOTONES PREMIUM */
+.player-title{
+
+    font-size:28px;
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+    color:#FFD700;
+
+    text-shadow:
+        0 0 10px rgba(255,215,0,0.55);
+}
+
+/* =========================
+   BOTONES PREMIUM
+========================= */
 
 .btn-premium{
 
@@ -383,6 +351,43 @@ body{
 }
 
 /* =========================
+   BOTONES GENERALES
+========================= */
+
+.btn{
+
+    display:block;
+
+    margin:10px auto;
+    padding:15px;
+
+    width:90%;
+    max-width:400px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6CBEF0,
+            #ffffff
+        );
+
+    color:#111;
+    font-weight:bold;
+    text-decoration:none;
+
+    border-radius:14px;
+
+    border:1px solid rgba(255,255,255,0.22);
+
+    transition:0.3s;
+}
+
+.btn:hover{
+
+    transform:scale(1.03);
+}
+
+/* =========================
    SEPARADOR
 ========================= */
 
@@ -404,22 +409,6 @@ body{
         );
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:480px){
-
-    .card-fc{
-        height:450px;
-    }
-
-    .card-player{
-        max-height:290px;
-    }
-
-}
-
 </style>
 </head>
 
@@ -428,22 +417,23 @@ body{
 <div class="container">
 
 <!-- =========================
-     TARJETA ARGENTINA
+     TARJETA
 ========================= -->
 
 <div class="card-fc">
 
     <div class="card-bg"></div>
 
-    <!-- CAMBIAR IMAGEN -->
     <img id="player-img"
          class="card-player"
-         src="argentina.png">
+         src="messi.png">
 
     <div class="card-info">
 
-        <div class="card-name">
-            Selección Argentina
+        <div id="card-name"
+             class="card-name">
+
+             Lionel Messi
         </div>
 
         <div class="card-details">
@@ -456,38 +446,44 @@ body{
 </div>
 
 <!-- =========================
-     SECCIÓN ESPECIAL MESSI
+     PREMIUM PLAYER
 ========================= -->
 
 <div class="messi-box">
 
-    <div class="messi-title">
-        ✨ Lionel Messi Edition
+    <div id="premium-title"
+         class="player-title">
+
+         ✨ Lionel Messi Edition
     </div>
 
-    <a class="btn-premium"
-       href="https://www.instagram.com/leomessi/"
+    <a id="btn-instagram"
+       class="btn-premium"
+       href="#"
        target="_blank">
 
        📸 Instagram Oficial
     </a>
 
-    <a class="btn-premium"
-       href="https://www.youtube.com/results?search_query=messi+highlights"
+    <a id="btn-highlights"
+       class="btn-premium"
+       href="#"
        target="_blank">
 
        🎥 Messi Highlights
     </a>
 
-    <a class="btn-premium"
-       href="https://www.google.com/search?q=lionel+messi+estadisticas"
+    <a id="btn-stats"
+       class="btn-premium"
+       href="#"
        target="_blank">
 
        📊 Estadísticas
     </a>
 
-    <a class="btn-premium"
-       href="https://www.google.com/search?q=lionel+messi+balon+de+oro"
+    <a id="btn-balon"
+       class="btn-premium"
+       href="#"
        target="_blank">
 
        🏆 Balón de Oro
@@ -523,13 +519,17 @@ body{
 </a>
 
 <a class="btn"
-   href="https://www.google.com/search?q=argentina+seleccion+proximo+partido"
+   href="https://www.google.com/search?q=seleccion+argentina+proximo+partido"
    target="_blank">
 
 📅 Próximo Partido
 </a>
 
 <div class="separador"></div>
+
+<!-- =========================
+     COMPETENCIAS
+========================= -->
 
 <a class="btn"
    href="https://www.google.com/search?q=seleccion+argentina+calendario"
@@ -600,7 +600,150 @@ body{
 🏆 FIFA World Cup 2026
 </a>
 
+<!-- BOTÓN NUEVO -->
+
+<a class="btn"
+   href="worldcup2026_bracket_upscaled.png"
+   target="_blank">
+
+🗺️ Llaves Mundial 2026
+</a>
+
 </div>
+
+<!-- =========================
+     SCRIPT DINÁMICO
+========================= -->
+
+<script>
+
+/* ==========================================
+   JUGADORES
+========================================== */
+
+const players = {
+
+    messi: {
+
+        name: "Lionel Messi",
+
+        image: "messi.png",
+
+        instagram:
+            "https://www.instagram.com/leomessi/",
+
+        highlights:
+            "https://www.youtube.com/results?search_query=messi+highlights",
+
+        stats:
+            "https://www.google.com/search?q=lionel+messi+estadisticas",
+
+        ballondor:
+            "https://www.google.com/search?q=lionel+messi+balon+de+oro"
+    },
+
+    julian: {
+
+        name: "Julián Álvarez",
+
+        image: "julian.png",
+
+        instagram:
+            "https://www.instagram.com/juliaanalvarez/",
+
+        highlights:
+            "https://www.youtube.com/results?search_query=julian+alvarez+highlights",
+
+        stats:
+            "https://www.google.com/search?q=julian+alvarez+estadisticas",
+
+        ballondor:
+            "https://www.google.com/search?q=julian+alvarez+titulos"
+    },
+
+    dibu: {
+
+        name: "Dibu Martínez",
+
+        image: "dibu.png",
+
+        instagram:
+            "https://www.instagram.com/emimartinezz1/",
+
+        highlights:
+            "https://www.youtube.com/results?search_query=dibu+martinez+saves",
+
+        stats:
+            "https://www.google.com/search?q=dibu+martinez+estadisticas",
+
+        ballondor:
+            "https://www.google.com/search?q=dibu+martinez+premios"
+    },
+
+    enzo: {
+
+        name: "Enzo Fernández",
+
+        image: "enzo.png",
+
+        instagram:
+            "https://www.instagram.com/enzojfernandez/",
+
+        highlights:
+            "https://www.youtube.com/results?search_query=enzo+fernandez+highlights",
+
+        stats:
+            "https://www.google.com/search?q=enzo+fernandez+estadisticas",
+
+        ballondor:
+            "https://www.google.com/search?q=enzo+fernandez+titulos"
+    }
+
+};
+
+/* ==========================================
+   URL PLAYER
+========================================== */
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const playerKey =
+    params.get("player");
+
+/* ==========================================
+   DEFAULT PLAYER
+========================================== */
+
+const player =
+    players[playerKey] || players["messi"];
+
+/* ==========================================
+   CAMBIAR CONTENIDO
+========================================== */
+
+document.getElementById("player-img").src =
+    player.image;
+
+document.getElementById("card-name").innerText =
+    player.name;
+
+document.getElementById("premium-title").innerText =
+    "✨ " + player.name + " Edition";
+
+document.getElementById("btn-instagram").href =
+    player.instagram;
+
+document.getElementById("btn-highlights").href =
+    player.highlights;
+
+document.getElementById("btn-stats").href =
+    player.stats;
+
+document.getElementById("btn-balon").href =
+    player.ballondor;
+
+</script>
 
 </body>
 </html>
